@@ -40,6 +40,7 @@ import { rejectInvite } from './routes/invites/reject-invite'
 import { revokeInvite } from './routes/invites/revoke-invite'
 import { getPendingInvites } from './routes/invites/get-pending-invites'
 import { getOrganizationBilling } from './routes/billing/get-organization-billing'
+import { getMembership } from './routes/orgs/get-membership'
 
 const app = fastify().withTypeProvider<ZodTypeProvider>()
 
@@ -86,6 +87,7 @@ app.register(requestPasswordRecover)
 app.register(resetPassword)
 
 app.register(createOrganization)
+app.register(getMembership)
 app.register(getOrganization)
 app.register(getOrganizations)
 app.register(updateOrganization)
